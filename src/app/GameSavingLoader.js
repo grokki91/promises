@@ -3,8 +3,7 @@ import json from './parser';
 
 export default class GameSavingLoader {
   static load() {
-    const data = read(); // возвращается Promise!
-    return data.then((response) => response).then((value) => json(value)).catch((error) => {
+    return read().then((response) => response).then((value) => json(value)).catch((error) => {
       new Error(error);
     });
   }
